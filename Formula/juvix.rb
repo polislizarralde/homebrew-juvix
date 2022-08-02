@@ -20,7 +20,7 @@ class Juvix < Formula
   depends_on "stack" => [:build, :recommended]
   depends_on "d12frosted/emacs-plus/emacs-plus@28" => :optional
 
-  resource("stdlib").stage { bin.install "juvix-stdlib" }
+#   resource("stdlib").stage { bin.install "juvix-stdlib" }
   
   def install
     system "make", "install"
