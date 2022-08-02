@@ -10,9 +10,10 @@ class Juvix < Formula
   end
 
   option "with-emacs", "Install Emacs Plus v28"
+  option "without-stack", "Do not install Haskell-Stack"
   
   depends_on "make" => :build
-  depends_on "stack" => :build
+  depends_on "stack" => [:build, :recommended]
   depends_on "d12frosted/emacs-plus/emacs-plus@28" => :optional
   
   def install
