@@ -9,18 +9,24 @@ class Juvix < Formula
     url "https://github.com/anoma/juvix.git", branch: "main"
   end
 
-  depends_on "stack"
-  depends_on "d12frosted/emacs-plus/emacs-plus@28"
-
+  option "with-emacs", "Install Emacs Plus v28"
+  
+  depends_on "make" => :build
+  depends_on "stack" => :build
+  
+  if build?with "emacs"
+      depends_on "d12frosted/emacs-plus/emacs-plus@28" => :optional
+  end
+  
   def install
       bin.install Dir["juvix-stdlib"] 
       system "git", "submodule" , "update", "--init", "--recursive"
-      system "stack", "install", "--fast"
+      system "make", "install"
       prefix.install "README.org"
       prefix.install "LICENSE" 
   end
 
   test do
-    system "stack", "test", "--fast"
+    system "make", "test-shell"
   end
 end
