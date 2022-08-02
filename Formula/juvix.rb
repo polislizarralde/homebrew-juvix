@@ -6,7 +6,7 @@ class Juvix < Formula
   license "GPL-3.0"
   
   resource("juvix-stdlib") do
-     url "https://github.com/anoma/juvix-stdlib.foo"
+     url "https://github.com/anoma/juvix-stdlib.git"
   end
   
   head do
