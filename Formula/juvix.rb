@@ -21,11 +21,10 @@ class Juvix < Formula
   depends_on "d12frosted/emacs-plus/emacs-plus@28" => :optional
   
   def install
-    resource("stdlib").stage do
-      system "make", "install"
-      prefix.install "README.org"
-      prefix.install "LICENSE" 
-    end
+    resource("stdlib").stage juvix-stdlib
+    system "make", "install"
+    prefix.install "README.org"
+    prefix.install "LICENSE" 
   end
 
   test do
