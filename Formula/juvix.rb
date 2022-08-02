@@ -15,7 +15,7 @@ class Juvix < Formula
   depends_on "stack" => :build
   
   if build?with "emacs"
-      depends_on "d12frosted/emacs-plus/emacs-plus@28" => :optional
+      depends_on "d12frosted/emacs-plus/emacs-plus@28"
   end
   
   def install
