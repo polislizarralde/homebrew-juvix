@@ -23,7 +23,6 @@ class Juvix < Formula
   resource("stdlib").stage { bin.install "juvix-stdlib" }
   
   def install
-    bin.install Dir["juvix-stdlib"]
     system "make", "install"
     prefix.install "README.org"
     prefix.install "LICENSE" 
