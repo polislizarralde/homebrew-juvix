@@ -17,7 +17,7 @@ class Juvix < Formula
   
   def install
       bin.install Dir["juvix-stdlib"] 
-      system "git", "submodule" , "update", "--init", "--recursive"
+#       system "git", "submodule" , "update", "--init", "--recursive"
       system "make", "install"
       prefix.install "README.org"
       prefix.install "LICENSE" 
