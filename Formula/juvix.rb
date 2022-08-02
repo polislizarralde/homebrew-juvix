@@ -13,10 +13,7 @@ class Juvix < Formula
   
   depends_on "make" => :build
   depends_on "stack" => :build
-  
-  if build?with "emacs"
-      depends_on "d12frosted/emacs-plus/emacs-plus@28"
-  end
+  depends_on "d12frosted/emacs-plus/emacs-plus@28" => :optional
   
   def install
       bin.install Dir["juvix-stdlib"] 
